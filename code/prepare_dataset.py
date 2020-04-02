@@ -140,4 +140,13 @@ def load_data_for_training_w2v(isShort=False, till=10):
     np.save('arrays/y_test_w2v.npy', y_test)
     print("Saved arrays!")
 
-load_data_for_training_w2v(isShort=True)
+def read_arrays_and_return():
+    """
+        Reads the prepared numpy arrays
+        # Returns: the read np arrays
+    """
+    X_train = np.load('arrays/X_train_w2v.npy')
+    y_train = np.load('arrays/y_train_w2v.npy')
+    X_test = np.load('arrays/X_test_w2v.npy')
+    y_test = np.load('arrays/y_test_w2v.npy')
+    return (X_train, X_test, y_train, y_test)
