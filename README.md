@@ -2,13 +2,14 @@
 
 This repository contains the code for analyzing the semantics in published literature on COVID-19 in hopes of finding some relation.
 
+
 ## Working
 ![Output sample](https://github.com/kjanjua26/Octofying-COVID19-Literature/raw/master/video/out.gif)
 
 ## To Run
 To run the code, clone this repository and install the following dependencies:
 <ol>
-  <li>sentence_transformers</li>
+  <li>sentence_transformers => ```pip install -U sentence-transformers``` </li>
 </ol>
 The dataset can be downloaded from Kaggle, the link is: <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">DOWNLOAD</a>
 
