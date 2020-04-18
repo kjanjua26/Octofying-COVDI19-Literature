@@ -20,4 +20,4 @@ Download those from here <a href="https://drive.google.com/uc?id=1-PYF5y1hIpzwoX
 Finally, type the following comand to run: ```python3 GUI_for_results.py``` file.
 
 ## Note
-This repo builds on the initial work done by: The dataset can be downloaded from Kaggle, the link is: <a href="https://www.kaggle.com/theamrzaki/covid-19-bert-researchpapers-semantic-search">CLICK HERE</a>
+This repo builds on the initial work done by: <a href="https://www.kaggle.com/theamrzaki/covid-19-bert-researchpapers-semantic-search">CLICK HERE</a>
