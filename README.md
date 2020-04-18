@@ -2,6 +2,7 @@
 
 This repository contains the code for analyzing the semantics in published literature on COVID-19 in hopes of finding some relation.
 
+![Image description](https://github.com/kjanjua26/Octofying-COVID19-Literature/raw/master/video/logo.png)
 
 ## Working
 ![Output sample](https://github.com/kjanjua26/Octofying-COVID19-Literature/raw/master/video/out.gif)
