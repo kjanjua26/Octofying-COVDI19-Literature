@@ -4,6 +4,6 @@ This repository contains the code for analyzing the semantics in published liter
 
 ## Working
 <video width="320" height="240" controls>
-  <source src="video/tkbot.mov" type="video/mov">
+  <source src="video/tkBot.mov" type="video/mov">
 </video>
 
