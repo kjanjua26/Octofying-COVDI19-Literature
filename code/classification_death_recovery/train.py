@@ -37,15 +37,15 @@ def train_net():
         Pass the data and train the neural network.
         Train for both cases, test for both cases.
     '''
-    X_train1, X_test1, Y_train1, Y_test1, 
-        X_train2, X_test2, 
+    X_train1, X_test1, Y_train1, Y_test1, \
+        X_train2, X_test2, \
         Y_train2, Y_test2 = preprocess_data.read_prep_data()
     print("Read data!")
     print("X_train1, X_train2: ", X_train1.shape, X_train2.shape)
     print("Y_train1, Y_train2: ", Y_train1.shape, Y_train2.shape)
     print("X_test1, X_test2: ", X_test1.shape, X_test2.shape)
     print("Y_test1, Y_test2: ", Y_test1.shape, Y_test2.shape)
-    
+    model = compile_optimize()
     print("Training for first case: Given X, predict if death or no death!")
     model.fit(X_train1, Y_train1, epochs = 30, batch_size = 16)
     predictions = model.predict(X_test1)

@@ -1,5 +1,8 @@
 '''
-    
+    This code is responsible for downloading the novel COVID-19
+    dataset from Kaggle.
+    Furthermore, it also prepares the data for processing
+    by converting the text to 100d embeddings.
 '''
 import datetime, os
 import pandas as pd
