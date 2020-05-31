@@ -90,5 +90,12 @@ def read_prep_data():
     Y1, Y2 = clean_Y_vector(Y_1, Y_2)
     X_train1, X_test1, Y_train1, Y_test1 = train_test_split(X, Y1)
     X_train2, X_test2, Y_train2, Y_test2 = train_test_split(X, Y2)
+    
+    # saving the test splits as np arrays
+    np.save('X_test_1.npy', X_test1)
+    np.save('X_test2.npy', X_test2)
+    np.save('y_test_1.npy', Y_test1)
+    np.save('y_test_1.npy', Y_test2)
+
     return (X_train1, X_test1, Y_train1, Y_test1, 
             X_train2, X_test2, Y_train2, Y_test2)

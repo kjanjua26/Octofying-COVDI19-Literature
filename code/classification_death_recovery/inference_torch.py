@@ -7,6 +7,7 @@ import torch
 import torch.optim as optim
 import preprocess_data
 from train_pytorch import Net
+import numpy as np
 
 def load_model_saved(model_file):
     '''
