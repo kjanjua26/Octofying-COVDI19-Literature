@@ -38,10 +38,12 @@ def validate_compute_accuracy(model_file, X_test1, Y_test1):
 def tester(model_file, load=False):
     if load:
         # load the files
-        X_test_1 = np.load('x_test_1.npy')
+        print('Loading the saved files.')
+        X_test_1 = np.load('X_test_1.npy')
         X_test_2 = np.load('X_test_2.npy')
         y_test_1 = np.load('y_test_1.npy')
         y_test_2 = np.load('y_test_2.npy')
+
     else:
         X_train1, X_test1, Y_train1, Y_test1, \
             X_train2, X_test2, \
@@ -56,10 +58,15 @@ def tester(model_file, load=False):
         Y_train2 = torch.from_numpy(Y_train2).float()
         Y_test2 = torch.from_numpy(Y_test2).float()
 
+    X_test1 = torch.from_numpy(X_test_1).float()
+    X_test2 = torch.from_numpy(X_test_2).float()
+    Y_test1 = torch.from_numpy(y_test_1).float()
+    Y_test2 = torch.from_numpy(y_test_2).float()
+
     print("Test Accuracy Case # 01: ", validate_compute_accuracy(model_file, X_test1, Y_test1))
     print("Test Accuracy Case # 02: ", validate_compute_accuracy(model_file, X_test2, Y_test2))
 
 
 if __name__ == "__main__":
     model_file = '/Users/Janjua/Desktop/Projects/Octofying-COVID19-Literature/code/classification_death_recovery/models/model_v1'
-    tester(model_file)
+    tester(model_file, load=True)

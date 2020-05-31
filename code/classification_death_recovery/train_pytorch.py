@@ -7,13 +7,16 @@
     Code inspiration: 
     https://pythonprogramming.net/introduction-deep-learning-neural-network-pytorch/
 '''
+
 import preprocess_data
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
 import torch.optim as optim
 import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight')
 
+PATH = '/Users/Janjua/Desktop/Projects/Octofying-COVID19-Literature/code/classification_death_recovery/models/model_v2'
 class Net(nn.Module):
     '''
         The basic FC-7 neural architecture class.
@@ -48,7 +51,7 @@ def train_net(net, X_train1, Y_train1):
     BATCH_SIZE = 16
     loss_lst = []
     acc_lst = []
-    for epoch in range(100):
+    for epoch in range(5):
         for i in range(0, len(X_train1), BATCH_SIZE):
             batch_X = X_train1[i:i+BATCH_SIZE]
             batch_y = Y_train1[i:i+BATCH_SIZE]
@@ -61,6 +64,7 @@ def train_net(net, X_train1, Y_train1):
         loss_lst.append(loss)
         acc_lst.append(acc)
         print(f"Epoch: {epoch}. Loss: {loss}. Accuracy: {acc}")
+    save_model_to_validate(net, loss_lst[-1], acc_lst[-1])
     return loss_lst, acc_lst
 
 def validate_compute_accuracy(net, X_test1, Y_test1):
@@ -78,6 +82,14 @@ def validate_compute_accuracy(net, X_test1, Y_test1):
                 correct += 1
             total += 1
     return round(correct/total, 3)
+
+def save_model_to_validate(model, end_loss, end_acc):
+    '''
+        Save the model to validate the model for later use.
+    '''
+    torch.save(model, PATH)
+    print("Model Saved at End Loss: {} and End Acc: {}!".format(end_loss, end_acc))
+
 
 def caller():
     '''
