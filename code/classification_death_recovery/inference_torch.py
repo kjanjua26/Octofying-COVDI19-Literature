@@ -28,7 +28,7 @@ def validate_compute_accuracy(model_file, X_test1, Y_test1):
     with torch.no_grad():
         for i in range(len(X_test1)):
             real_class = torch.argmax(Y_test1[i])
-            net_out = net(X_test1[i].view(-1, 504))[0]
+            net_out = net(X_test1[i].view(-1, X_test1.shape[-1]))[0]
             predicted_class = torch.argmax(net_out)
             if predicted_class == real_class:
                 correct += 1
